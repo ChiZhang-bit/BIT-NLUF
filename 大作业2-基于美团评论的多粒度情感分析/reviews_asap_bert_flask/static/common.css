@@ -1,0 +1,28 @@
+#top{
+    height: 200px;       /*高度200px*/
+    text-align: center;  /*文本居中对齐*/
+}
+
+#bottom{
+    height: 400px;
+}
+
+#left{
+    float: left;     /*靠左悬浮*/
+    width: 45%;      /*宽度： 父容器的45%*/
+    height: 100%;
+}
+
+#right{
+    float: right;
+    width: 45%;
+    height: 100%;
+}
+
+.s1{
+    margin-left: 100px;  /*距离左侧外边距100px*/
+}
+
+textarea{
+    font-size:16px;
+}

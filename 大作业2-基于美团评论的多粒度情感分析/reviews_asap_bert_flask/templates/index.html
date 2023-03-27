@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>细粒度情感分析系统</title>
+    <link href="../static/common.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            background: #F7EED6;
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div id="top">
+    <h1>细粒度情感分析系统</h1>
+<div>
+<div id="left">
+    <h3 class="s1" style="color:#FFD700; margin-left:210px">【输入文本】</h3>
+    <form action="/" method="post" class="s1">
+        <textarea rows="20" cols="70" font-size="" name="txt">{{ txt }}</textarea><br>
+        <input type="submit" value="        分     析        " style="margin-left:110px">
+    </form>
+</div>
+<div id="right">
+    <h3 style="color:#FFD700; margin-left:0px">【分析结果】</h3>
+
+    <p style="color:#66CCFF; font-size:20px">正面</p>
+    <form action="/" method="post" class="s1" align="left">
+        <textarea rows="2" cols="50" font-size="" name="txt">{{ pos }}</textarea>
+    </form>
+
+    <p style="color:green; font-size:20px">中性</p>
+    <form action="/" method="post" class="s1" align="left">
+        <textarea rows="2" cols="50" font-size="" name="txt">{{ neu }}</textarea>
+    </form>
+
+    <p style="color:red; font-size:20px">负面</p>
+    <form action="/" method="post" class="s1" align="left">
+        <textarea rows="2" cols="50" font-size="" name="txt">{{ neg }}</textarea>
+    </form>
+</div>
+</body>
+
+<script src="../jquery.js"></script>
+<script src="https://l2dwidget.js.org/lib/L2Dwidget.min.js"></script>
+<script type="text/javascript">
+    L2Dwidget.init(
+          {
+          model: {
+            jsonPath:"https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json",
+            "scale": 1
+          },
+          dialog: {
+            enable: true,
+            script: {
+              'every idle 10s': '您好，细粒度情感分析站为您服务！',
+              'tap body': '您、您好……',
+              'tap face': '欢、欢迎……'
+              }
+            }
+          }
+        );
+</script>
+
+</html>
